@@ -51,9 +51,9 @@ function getDataFromSongkickApi(searchArtist, callback) {
 function renderConcertResults(result) {
   return `
    <div class="result-container">
-     <h3 class="render-text"><a href="${result.url}">${result.displayName}</a></h3>
+     <h3 class="render-text"><a href="${result.uri}" target="_blank">${result.displayName}</a></h3>
      <h4 class="render-text">${result.start.date}</h4>
-     <p class="render-text-bottom"><strong>${result.venue.displayName}</strong>, ${result.location.city}</p>
+     <p class="render-text"><strong>${result.venue.displayName}</strong>, ${result.location.city}</p>
    </div>
  `;
 }
@@ -80,7 +80,7 @@ function initMap() {
   var bounds = new google.maps.LatLngBounds();
   var mapOptions = {
     center: new google.maps.LatLng(34.052, -118.244),
-    zoom: 3,
+    zoom: 5,
     styles: [{
       "featureType": "water",
       "elementType": "geometry",
@@ -255,8 +255,10 @@ function submitBehavior() {
   event.preventDefault();
   const searchArtist = $('.search-input').val();
   getDataFromSongkickApi(searchArtist, displaySongkickData);
-  // Redirects user to results page if user input is greater than 0
+  // Redirects user to a visible results page with a map below
   if(!searchArtist.length == 0) {
+    $('#results').show();
+    $('#map').show();
     location.href="#results";
   }
 }

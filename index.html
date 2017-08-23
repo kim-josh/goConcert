@@ -12,7 +12,6 @@
   <!-- Custom fonts for this template -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 
   <link href="style.css" rel="stylesheet">
 
@@ -37,7 +36,7 @@
             <div class="form-group search-wrapper">
               <div class="input-holder">
                 <input type="text" class="form-control search-input" placeholder="Enter artist name">
-                <button type="submit" class="btn btn-default search-icon" onclick="searchToggle(this,event);"><span></span></button>
+                <button type="submit" href="results" class="btn btn-default search-icon" onclick="searchToggle(this,event);"><span></span></button>
               </div>
               <span class="close" onclick="searchToggle(this, event);"></span>
             </div>
@@ -48,19 +47,23 @@
   </header>
 
   <!-- Results section -->
-  <section id="results" class="content-section text-center">
+  <section id="results" class="content-section text-center collapse">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Upcoming concerts and festivals</h2>
+          <img class="songkick-logo" src ="images/powered-by-songkick-white.png" alt="Songkick logo" width="213.75" height="75">
           <div class="js-search-results"></div>
+          <a href="#map" class="btn btn-circle js-scroll-trigger">
+            <i class="fa fa-angle-double-down animated"></i>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Map Section -->
-  <div id="map" class="venue-location"></div>
+  <div id="map" class="venue-location collapse"></div>
 
   <!-- Footer -->
   <footer>
