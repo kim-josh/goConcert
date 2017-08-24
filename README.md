@@ -15,7 +15,7 @@ Finally, there is a map with markers that contain information for all upcoming c
 ![alt text](https://github.com/kim-josh/goConcert/blob/master/images/user-guide4.png)
 
 ### Summary
-The purpose of goConcert is to seamlessly provide users information on artists' upcoming concerts and festivals. Want to know when are where Kendrick Lamar (or your artist of choice) is performing? That's easy. Simply input his name and hit enter!
+The purpose of goConcert is to seamlessly provide users information on artists' upcoming concerts and festivals. Want to know when and where Kendrick Lamar (or your artist of choice) is performing? That's easy. Simply input his name and hit enter!
 Perhaps you were planning to go on vacation and was wondering if Kendrick Lamar was gonna be in town. Just look at the map to see when and where he's performing! goConcert gotcha!
 
 ### Key Technologies Used
