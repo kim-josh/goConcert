@@ -58,18 +58,28 @@ function renderConcertResults(result) {
  `;
 }
 
-
 // Callback function for Songkick API
 function displaySongkickData(data) {
   console.log(data);
   const songkickData = data.resultsPage.results.event;
-  const results = songkickData.map((item, index) => renderConcertResults(item));
-  $('.js-search-results').html(results);
-
-  // Stores Songkick data in global variable, concertInfo
-  concertInfo = songkickData.map((item, index) => {
-    return item;
-  });
+  const searchArtist = $('.search-input').val();
+  if (songkickData != undefined) {
+    const results = songkickData.map((item, index) => renderConcertResults(item));
+    $('.js-search-results').html(results); // Stores Songkick data in global variable, concertInfo
+    concertInfo = songkickData.map((item, index) => {
+      return item;
+    });
+    // Redirects user to a visible results page with a map below
+    $('#results').show();
+    $('#map').show();
+    location.href = "#results";
+  } else if (songkickData == undefined && searchArtist.length > 0) {
+    swal({
+      title: 'Oops',
+      text: 'Sorry, we were unable to find any upcoming concerts for that artist.',
+      type: 'info'
+    })
+  }
   initMap();
 }
 
@@ -251,24 +261,14 @@ function initMap() {
   })
 }
 
-function submitBehavior() {
-  event.preventDefault();
-  const searchArtist = $('.search-input').val();
-  getDataFromSongkickApi(searchArtist, displaySongkickData);
-  // Redirects user to a visible results page with a map below
-  if(!searchArtist.length == 0) {
-    $('#results').show();
-    $('#map').show();
-    location.href="#results";
-  }
-}
-
 function watchSubmit() {
   $('.search-icon').on('click', function(event) {
-    submitBehavior();
+    event.preventDefault();
+    const searchArtist = $('.search-input').val();
+    getDataFromSongkickApi(searchArtist, displaySongkickData);
   });
   $('.search-input').on('keyup', function(event) {
-    if(event.which == 13) {
+    if (event.which == 13) {
       $('.search-icon').click();
     }
   });

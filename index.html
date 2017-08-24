@@ -8,11 +8,10 @@
   <title>goConcert</title>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
   <!-- Custom fonts for this template -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
+  <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
   <link href="style.css" rel="stylesheet">
 
 </head>
@@ -35,7 +34,7 @@
             <h1 class="brand-heading">goConcert</h1>
             <div class="form-group search-wrapper">
               <div class="input-holder">
-                <input type="text" class="form-control search-input" placeholder="Enter artist name">
+                <input type="text" class="form-control search-input" placeholder="Enter full artist name">
                 <button type="submit" href="results" class="btn btn-default search-icon" onclick="searchToggle(this,event);"><span></span></button>
               </div>
               <span class="close" onclick="searchToggle(this, event);"></span>
@@ -77,7 +76,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <!-- Plugin JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
   <!-- Google Maps API Key -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpMq0b-qbj6GQGQhcJoloo6SZr6NnKDkU&callback=initMap"></script>
   <script src="JS/main.js"></script>
