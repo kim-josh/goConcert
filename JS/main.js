@@ -26,7 +26,7 @@ var concertInfo = [];
     }
   });
 
-})(jQuery); // End of use strict
+})(jQuery);
 
 // AJAX call to songkick API
 function getDataFromSongkickApi(searchArtist, callback) {
@@ -90,7 +90,8 @@ function initMap() {
   var bounds = new google.maps.LatLngBounds();
   var mapOptions = {
     center: new google.maps.LatLng(34.052, -118.244),
-    zoom: 5,
+    zoom: 7,
+    minZoom: 2,
     styles: [{
       "featureType": "water",
       "elementType": "geometry",
@@ -265,6 +266,7 @@ function watchSubmit() {
   $('.search-icon').on('click', function(event) {
     event.preventDefault();
     const searchArtist = $('.search-input').val();
+    $('.click-icon').hide();
     getDataFromSongkickApi(searchArtist, displaySongkickData);
   });
   $('.search-input').on('keyup', function(event) {

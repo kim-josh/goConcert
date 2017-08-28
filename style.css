@@ -38,7 +38,7 @@ a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  color: #42DCA3;
+  color: #8A21AC;;
 }
 
 a:focus, a:hover {
@@ -464,10 +464,6 @@ body {
   margin-top: 30px;
 }
 
-.render-text {
-  font-family: 'Lora', serif !important;
-}
-
 .info-container {
   background: #333;
   border: 2px solid black;
@@ -489,4 +485,10 @@ body {
   text-shadow: 0 -1px #000000;
   -webkit-box-shadow: 0 0 8px #000;
   box-shadow: 0 0 8px #000;
+}
+
+.click-icon {
+  position: relative;
+  color: #FFFFFF;
+  bottom: 30px;
 }
